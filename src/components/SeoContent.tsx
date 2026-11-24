@@ -48,6 +48,28 @@ export default function SeoContent({ tool, onNavigate }: SeoContentProps) {
 
   return (
     <div className="mt-12 space-y-12 text-slate-700">
+      {/* Natural-language search terms users commonly use for this tool */}
+      {tool.keywords.length > 0 && (
+        <section className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 via-white to-violet-50/70 p-5 sm:p-6">
+          <h2 className="text-base sm:text-lg font-bold text-slate-900">
+            Popular searches for {tool.name}
+          </h2>
+          <p className="mt-1 text-sm text-slate-600">
+            Common ways people look for this task online.
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {tool.keywords.slice(0, 8).map((keyword) => (
+              <li
+                key={keyword}
+                className="rounded-full border border-indigo-100 bg-white px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700"
+              >
+                {keyword}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* Introduction & Value Proposition */}
       <section className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xs">
         <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-3">
