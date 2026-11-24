@@ -307,7 +307,7 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
 
     const seoTitle = seo?.title || `${tool.name} - Smart Tools`;
     const seoDescription =
-      seo?.description || tool.description;
+      seo?.description || tool.metaDescription || tool.description;
 
     // Page title
     document.title = seoTitle;
@@ -394,6 +394,40 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
     }
 
     ogUrl.setAttribute('content', canonicalUrl);
+
+    // Keep social previews aligned with the active tool page.
+    const setMeta = (selector: string, attribute: string, value: string) => {
+      let element = document.querySelector(selector) as HTMLMetaElement | null;
+      if (!element) {
+        element = document.createElement('meta');
+        const [key, name] = selector.match(/\[(name|property)="([^"]+)"\]/)?.slice(1) || [];
+        if (key && name) element.setAttribute(key, name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute(attribute, value);
+    };
+    setMeta('meta[name="twitter:title"]', 'content', seoTitle);
+    setMeta('meta[name="twitter:description"]', 'content', seoDescription);
+
+    // Describe the active utility for search engines without keyword stuffing.
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: tool.name,
+      url: canonicalUrl,
+      description: seoDescription,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Any',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    };
+    let appSchema = document.getElementById('tool-app-jsonld');
+    if (!appSchema) {
+      appSchema = document.createElement('script');
+      appSchema.id = 'tool-app-jsonld';
+      appSchema.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(appSchema);
+    }
+    appSchema.textContent = JSON.stringify(schema);
 
     // Keep existing behavior
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -537,6 +571,13 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
         <div id="tool-workspace" className="relative">
           {renderToolWidget()}
         </div>
+        <AdSlot type="between-content" />
 
-      
-        
+        {/* Helpful, tool-specific search phrases — shown as user-friendly shortcuts */}
+        <SeoContent tool={tool} onNavigate={onNavigate} />
+
+        <AdSlot type="bottom" />
+      </main>
+    </div>
+  );
+}

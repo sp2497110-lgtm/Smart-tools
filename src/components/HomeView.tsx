@@ -56,16 +56,16 @@ export default function HomeView({
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-6 sm:pt-10">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-2xs">
           <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-          <span>40+ Free, Fast &amp; Completely In-Browser Tools</span>
+          <span>40+ Free Online Tools · Built for Speed &amp; Privacy</span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight sm:leading-none">
-          Fast, Free &amp; Private <br className="hidden sm:inline" />
-          <span className="text-indigo-600">Online Utilities</span>
+          Free Online Tools for <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Images, PDFs &amp; More</span>
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Compress images to exact KB targets, merge &amp; split PDFs, calculate financial metrics, and format code. All processing happens 100% inside your web browser.
+          Compress JPG, PNG and WebP images, merge or split PDFs, convert files, create QR codes, format text and use practical calculators — with supported processing directly in your browser.
         </p>
 
         {/* Global Instant Search Box */}
@@ -76,7 +76,7 @@ export default function HomeView({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search 40+ tools (e.g. compress to 50kb, merge pdf, emi calculator)..."
+              placeholder="Find a tool (e.g. image compressor, merge PDF, JPG to WebP, EMI calculator)..."
               className="w-full pl-12 pr-10 py-3.5 bg-white border border-slate-300 rounded-2xl shadow-sm text-sm sm:text-base text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all"
             />
             {searchQuery && (
