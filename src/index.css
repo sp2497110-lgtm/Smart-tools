@@ -73,3 +73,26 @@
 input[type="range"] {
   accent-color: #4f46e5;
 }
+
+/* Accessible, consistent interaction polish */
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgb(99 102 241 / 45%);
+  outline-offset: 2px;
+}
+::selection { background: rgb(99 102 241 / 18%); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
