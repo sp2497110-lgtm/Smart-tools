@@ -313,6 +313,19 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
     document.title = seoTitle;
 
     // Meta description
+    let keywordsMeta = document.querySelector(
+      'meta[name="keywords"]'
+    ) as HTMLMetaElement | null;
+
+    if (!keywordsMeta) {
+      keywordsMeta = document.createElement('meta');
+      keywordsMeta.setAttribute('name', 'keywords');
+      document.head.appendChild(keywordsMeta);
+    }
+
+    const pageKeywords = Array.isArray(tool.keywords) ? tool.keywords.join(', ') : tool.name;
+    keywordsMeta.setAttribute('content', `${pageKeywords}, free online ${tool.name.toLowerCase()}, Toolzy`);
+
     let metaDesc = document.querySelector(
       'meta[name="description"]'
     ) as HTMLMetaElement | null;
