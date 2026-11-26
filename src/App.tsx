@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getToolByPath } from './data/toolsData';
+import { getSeoLandingPageByPath } from './data/seoLandingPages';
 import { ToolCategory } from './types';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeView from './components/HomeView';
 import ToolView from './components/ToolView';
+import SeoLandingPage from './components/SeoLandingPage';
 import SearchModal from './components/SearchModal';
 import InfoModals, { InfoModalType } from './components/InfoModals';
 
@@ -22,6 +24,10 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<ToolCategory | null>(null);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [infoModal, setInfoModal] = useState<InfoModalType>(null);
+
+  useEffect(() => {
+    document.getElementById('seo-prerender')?.remove();
+  }, []);
 
   // Sync state with popstate (Back / Forward browser buttons)
   useEffect(() => {
@@ -65,9 +71,8 @@ export default function App() {
   };
 
   // Find matching tool based on current path
-  const activeTool = useMemo(() => {
-    return getToolByPath(currentPath);
-  }, [currentPath]);
+  const activeTool = useMemo(() => getToolByPath(currentPath), [currentPath]);
+  const activeLandingPage = useMemo(() => getSeoLandingPageByPath(currentPath), [currentPath]);
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
@@ -80,7 +85,9 @@ export default function App() {
 
       {/* Main Dynamic View Area */}
       <div className="flex-1">
-        {activeTool ? (
+        {activeLandingPage ? (
+          <SeoLandingPage page={activeLandingPage} onNavigate={handleNavigate} />
+        ) : activeTool ? (
           <ToolView tool={activeTool} onNavigate={handleNavigate} />
         ) : (
           <HomeView

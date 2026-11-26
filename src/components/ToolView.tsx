@@ -191,6 +191,26 @@ const SEO_DATA: Record<
       'Minify and compress JSON online for free. Remove unnecessary spaces and formatting from JSON data quickly with this browser-based JSON minifier.',
   },
 
+  'base64-encoder': {
+    title: 'Base64 Encoder Online – Convert Text to Base64 | Toolzy',
+    description: 'Encode UTF-8 text into Base64 online. Paste text, generate the encoded output, and copy it from your browser with Toolzy.',
+  },
+
+  'base64-decoder': {
+    title: 'Base64 Decoder Online – Decode Base64 to Text | Toolzy',
+    description: 'Decode Base64 strings into readable UTF-8 text online. Check the input and copy the decoded result with Toolzy.',
+  },
+
+  'url-encoder': {
+    title: 'URL Encoder Online – Encode URL Parameters | Toolzy',
+    description: 'Percent-encode URL text and query parameters online. Convert spaces and special characters into URL-safe sequences with Toolzy.',
+  },
+
+  'url-decoder': {
+    title: 'URL Decoder Online – Decode Percent Encoded URLs | Toolzy',
+    description: 'Decode percent-encoded URL text and query parameters online. Convert encoded characters into readable text with Toolzy.',
+  },
+
   'base64-encoder-decoder': {
     title: 'Base64 Encoder Decoder Online Free - Encode & Decode Base64',
     description:
@@ -504,7 +524,11 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
       case 'json-validator':
       case 'json-minifier':
       case 'base64-encoder-decoder':
+      case 'base64-encoder':
+      case 'base64-decoder':
       case 'url-encoder-decoder':
+      case 'url-encoder':
+      case 'url-decoder':
         return <DevTools tool={tool} />;
 
       case 'qr-code-generator':
