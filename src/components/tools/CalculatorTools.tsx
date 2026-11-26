@@ -2,11 +2,32 @@ import { useState, useMemo } from 'react';
 import { Calculator, Percent, Calendar, Activity, CreditCard, TrendingUp, Receipt, DollarSign, Tag, ArrowRight } from 'lucide-react';
 import { ToolDefinition } from '../../types';
 
+const SUPPORTED_CURRENCIES = [
+  { code: 'INR', label: 'Indian Rupee (₹)' },
+  { code: 'USD', label: 'US Dollar ($)' },
+  { code: 'EUR', label: 'Euro (€)' },
+  { code: 'GBP', label: 'British Pound (£)' },
+  { code: 'AED', label: 'UAE Dirham (د.إ)' },
+  { code: 'CAD', label: 'Canadian Dollar (CA$)' },
+  { code: 'AUD', label: 'Australian Dollar (A$)' },
+  { code: 'SGD', label: 'Singapore Dollar (S$)' },
+  { code: 'JPY', label: 'Japanese Yen (¥)' },
+] as const;
+
 interface Props {
   tool: ToolDefinition;
 }
 
 export default function CalculatorTools({ tool }: Props) {
+  const [currency, setCurrency] = useState<string>('INR');
+  const formatMoney = (value: number) => new Intl.NumberFormat(
+    currency === 'INR' ? 'en-IN' : 'en-US',
+    { style: 'currency', currency, maximumFractionDigits: 2 }
+  ).format(value);
+  const usesCurrency = [
+    'emi-calculator', 'sip-calculator', 'gst-calculator',
+    'simple-interest-calculator', 'compound-interest-calculator', 'discount-calculator',
+  ].includes(tool.id);
   // PERCENTAGE CALCULATOR
   const [percMode, setPercMode] = useState<'val_of' | 'is_what_perc' | 'inc_dec'>('val_of');
   const [percX, setPercX] = useState<number>(15);
@@ -175,8 +196,8 @@ export default function CalculatorTools({ tool }: Props) {
     const r = emiRate / 12 / 100;
     const n = emiYears * 12;
 
-    if (P <= 0 || r <= 0 || n <= 0) return null;
-    const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    if (P <= 0 || r < 0 || n <= 0) return null;
+    const emi = r === 0 ? P / n : (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     const totalPayment = emi * n;
     const totalInterest = totalPayment - P;
 
@@ -195,8 +216,8 @@ export default function CalculatorTools({ tool }: Props) {
     const i = sipReturn / 12 / 100;
     const n = sipYears * 12;
 
-    if (P <= 0 || i <= 0 || n <= 0) return null;
-    const maturityValue = P * (((Math.pow(1 + i, n) - 1) / i) * (1 + i));
+    if (P <= 0 || i < 0 || n <= 0) return null;
+    const maturityValue = i === 0 ? P * n : P * (((Math.pow(1 + i, n) - 1) / i) * (1 + i));
     const investedAmount = P * n;
     const estimatedReturns = maturityValue - investedAmount;
 
@@ -275,6 +296,24 @@ export default function CalculatorTools({ tool }: Props) {
 
   return (
     <div className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-7 shadow-xs space-y-6">
+      {usesCurrency && (
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-indigo-100 bg-indigo-50/60 p-4">
+          <div>
+            <label htmlFor="calculator-currency" className="block text-sm font-bold text-slate-800">Display currency</label>
+            <p className="mt-0.5 text-xs text-slate-600">Choose the currency for all inputs and results. No exchange-rate conversion is applied.</p>
+          </div>
+          <select
+            id="calculator-currency"
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+            className="w-full sm:w-64 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold text-slate-800 focus:outline-indigo-500"
+          >
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option key={item.code} value={item.code}>{item.label}</option>
+            ))}
+          </select>
+        </div>
+      )}
       {/* PERCENTAGE CALCULATOR */}
       {tool.id === 'percentage-calculator' && (
         <div className="space-y-6">
@@ -525,7 +564,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Loan Principal</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Loan Principal ({currency})</label>
               <input
                 type="number"
                 value={emiPrincipal}
@@ -561,7 +600,7 @@ export default function CalculatorTools({ tool }: Props) {
                   Monthly Repayment (EMI)
                 </span>
                 <div className="text-3xl sm:text-4xl font-black text-indigo-950 mt-1">
-                  ${emiResult.monthlyEmi.toLocaleString()}
+                  {formatMoney(emiResult.monthlyEmi)}
                 </div>
               </div>
 
@@ -569,7 +608,7 @@ export default function CalculatorTools({ tool }: Props) {
                 <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
                   <span className="text-xs text-slate-500 font-medium">Total Interest Payable</span>
                   <div className="text-xl font-bold text-slate-900 mt-0.5">
-                    ${emiResult.totalInterest.toLocaleString()}
+                    {formatMoney(emiResult.totalInterest)}
                   </div>
                   <span className="text-[11px] text-indigo-600 font-semibold">
                     {emiResult.interestPercent}% of total payment
@@ -579,7 +618,7 @@ export default function CalculatorTools({ tool }: Props) {
                 <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
                   <span className="text-xs text-slate-500 font-medium">Total Payment (Principal + Interest)</span>
                   <div className="text-xl font-bold text-slate-900 mt-0.5">
-                    ${emiResult.totalPayment.toLocaleString()}
+                    {formatMoney(emiResult.totalPayment)}
                   </div>
                 </div>
               </div>
@@ -593,7 +632,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Monthly Investment</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Monthly Investment ({currency})</label>
               <input
                 type="number"
                 value={sipMonthly}
@@ -629,7 +668,7 @@ export default function CalculatorTools({ tool }: Props) {
                   Total Expected Corpus (Maturity Value)
                 </span>
                 <div className="text-3xl sm:text-4xl font-black text-emerald-950 mt-1">
-                  ${sipResult.maturityValue.toLocaleString()}
+                  {formatMoney(sipResult.maturityValue)}
                 </div>
               </div>
 
@@ -637,14 +676,14 @@ export default function CalculatorTools({ tool }: Props) {
                 <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
                   <span className="text-xs text-slate-500 font-medium">Invested Principal</span>
                   <div className="text-xl font-bold text-slate-900 mt-0.5">
-                    ${sipResult.investedAmount.toLocaleString()}
+                    {formatMoney(sipResult.investedAmount)}
                   </div>
                 </div>
 
                 <div className="p-4 bg-indigo-50/60 border border-indigo-100 rounded-xl">
                   <span className="text-xs text-indigo-700 font-medium">Estimated Wealth Gained</span>
                   <div className="text-xl font-bold text-indigo-950 mt-0.5">
-                    +${sipResult.estimatedReturns.toLocaleString()}
+                    +{formatMoney(sipResult.estimatedReturns)}
                   </div>
                 </div>
               </div>
@@ -677,7 +716,7 @@ export default function CalculatorTools({ tool }: Props) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Base Amount ($)</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Base Amount ({currency})</label>
               <input
                 type="number"
                 value={gstAmount}
@@ -713,7 +752,7 @@ export default function CalculatorTools({ tool }: Props) {
                     Total Gross Amount
                   </span>
                   <div className="text-3xl font-black text-slate-900 mt-1">
-                    ${gstResult.total.toFixed(2)}
+                    {formatMoney(gstResult.total)}
                   </div>
                 </div>
                 <div className="text-right">
@@ -721,7 +760,7 @@ export default function CalculatorTools({ tool }: Props) {
                     Total Tax ({gstRate}%)
                   </span>
                   <div className="text-2xl font-black text-indigo-600 mt-1">
-                    ${gstResult.gst.toFixed(2)}
+                    {formatMoney(gstResult.gst)}
                   </div>
                 </div>
               </div>
@@ -729,11 +768,11 @@ export default function CalculatorTools({ tool }: Props) {
               <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-200/80 text-xs">
                 <div className="p-3 bg-white border border-slate-200 rounded-xl">
                   <span className="text-slate-500 block">CGST ({(gstRate / 2).toFixed(1)}%)</span>
-                  <span className="font-bold text-slate-900 text-sm">${gstResult.cgst.toFixed(2)}</span>
+                  <span className="font-bold text-slate-900 text-sm">{formatMoney(gstResult.cgst)}</span>
                 </div>
                 <div className="p-3 bg-white border border-slate-200 rounded-xl">
                   <span className="text-slate-500 block">SGST ({(gstRate / 2).toFixed(1)}%)</span>
-                  <span className="font-bold text-slate-900 text-sm">${gstResult.sgst.toFixed(2)}</span>
+                  <span className="font-bold text-slate-900 text-sm">{formatMoney(gstResult.sgst)}</span>
                 </div>
               </div>
             </div>
@@ -746,7 +785,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Principal Amount (P)</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Principal Amount ({currency}) (P)</label>
               <input
                 type="number"
                 value={siP}
@@ -781,13 +820,13 @@ export default function CalculatorTools({ tool }: Props) {
               <span className="text-xs font-bold text-indigo-700 uppercase tracking-wider">
                 Total Simple Interest
               </span>
-              <div className="text-3xl font-black text-indigo-950 mt-1">${siResult.interest}</div>
+              <div className="text-3xl font-black text-indigo-950 mt-1">{formatMoney(Number(siResult.interest))}</div>
             </div>
             <div className="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 Total Maturity Amount (P + I)
               </span>
-              <div className="text-3xl font-black text-slate-900 mt-1">${siResult.total}</div>
+              <div className="text-3xl font-black text-slate-900 mt-1">{formatMoney(Number(siResult.total))}</div>
             </div>
           </div>
         </div>
@@ -798,7 +837,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Principal (P)</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Principal ({currency}) (P)</label>
               <input
                 type="number"
                 value={ciP}
@@ -846,13 +885,13 @@ export default function CalculatorTools({ tool }: Props) {
               <span className="text-xs font-bold text-indigo-700 uppercase tracking-wider">
                 Compound Interest Earned
               </span>
-              <div className="text-3xl font-black text-indigo-950 mt-1">${ciResult.interest}</div>
+              <div className="text-3xl font-black text-indigo-950 mt-1">{formatMoney(Number(ciResult.interest))}</div>
             </div>
             <div className="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 Final Future Value (A)
               </span>
-              <div className="text-3xl font-black text-slate-900 mt-1">${ciResult.total}</div>
+              <div className="text-3xl font-black text-slate-900 mt-1">{formatMoney(Number(ciResult.total))}</div>
             </div>
           </div>
         </div>
@@ -863,7 +902,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Original Price ($)</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Original Price ({currency})</label>
               <input
                 type="number"
                 value={discPrice}
@@ -894,15 +933,15 @@ export default function CalculatorTools({ tool }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
             <div className="p-5 bg-emerald-50 border border-emerald-100 rounded-xl">
               <span className="text-xs text-emerald-700 font-bold uppercase">You Save</span>
-              <div className="text-2xl font-black text-emerald-950 mt-1">${discResult.savings}</div>
+              <div className="text-2xl font-black text-emerald-950 mt-1">{formatMoney(Number(discResult.savings))}</div>
             </div>
             <div className="p-5 bg-slate-50 border border-slate-200 rounded-xl">
               <span className="text-xs text-slate-500 font-bold uppercase">Discounted Price</span>
-              <div className="text-2xl font-black text-slate-900 mt-1">${discResult.discounted}</div>
+              <div className="text-2xl font-black text-slate-900 mt-1">{formatMoney(Number(discResult.discounted))}</div>
             </div>
             <div className="p-5 bg-indigo-50 border border-indigo-100 rounded-xl">
               <span className="text-xs text-indigo-700 font-bold uppercase">Final (with Tax)</span>
-              <div className="text-2xl font-black text-indigo-950 mt-1">${discResult.final}</div>
+              <div className="text-2xl font-black text-indigo-950 mt-1">{formatMoney(Number(discResult.final))}</div>
             </div>
           </div>
         </div>

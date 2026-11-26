@@ -228,39 +228,39 @@ const SEO_DATA: Record<
   },
 
   'emi-calculator': {
-    title: 'EMI Calculator Online Free - Calculate Loan EMI',
+    title: 'EMI Calculator India – Home, Car & Personal Loan EMI | Toolzy',
     description:
-      'Calculate loan EMI online for free. Estimate monthly EMI, interest and total payment using this easy online EMI calculator for loans.',
+      'Calculate monthly loan EMI in Indian rupees for home, car and personal loans. See principal, interest and total repayment with a clear EMI formula. Select INR or another currency.',
   },
 
   'sip-calculator': {
-    title: 'SIP Calculator Online Free - Calculate SIP Returns',
+    title: 'SIP Calculator India – Mutual Fund Returns & SIP Value | Toolzy',
     description:
-      'Calculate estimated SIP returns online for free. Enter investment amount, duration and expected return to estimate your SIP investment value.',
+      'Estimate mutual fund SIP maturity value, invested amount and potential returns. Enter monthly investment, expected annual return and years. Choose INR or another currency. Returns are estimates, not guaranteed.',
   },
 
   'gst-calculator': {
-    title: 'GST Calculator Online Free - Calculate GST Amount',
+    title: 'GST Calculator India – Add or Remove 5%, 12%, 18%, 28% | Toolzy',
     description:
-      'Calculate GST online for free. Add or remove GST and calculate tax amounts quickly with this simple online GST calculator.',
+      'Calculate GST in India, add or remove GST, and view CGST and SGST split for common tax rates. Enter the amount and select INR or another supported currency.',
   },
 
   'simple-interest-calculator': {
-    title: 'Simple Interest Calculator Online Free - Calculate SI',
+    title: 'Simple Interest Calculator – Principal, Rate & Time | Toolzy',
     description:
-      'Calculate simple interest online for free. Find interest and total amount using principal, rate and time with this simple interest calculator.',
+      'Calculate simple interest and maturity amount using principal, annual interest rate and time. Display results in Indian rupees or another supported currency.',
   },
 
   'compound-interest-calculator': {
-    title: 'Compound Interest Calculator Online Free - Calculate CI',
+    title: 'Compound Interest Calculator – Monthly & Yearly | Toolzy',
     description:
-      'Calculate compound interest online for free. Estimate interest and final amount using principal, rate, time and compounding frequency.',
+      'Calculate compound interest and final value with annual, half-yearly, quarterly, monthly or daily compounding. Choose INR or another supported currency.',
   },
 
   'discount-calculator': {
-    title: 'Discount Calculator Online Free - Calculate Sale Price',
+    title: 'Discount Calculator – Sale Price, Savings & Tax | Toolzy',
     description:
-      'Calculate discounts and final sale prices online for free. Quickly find discount amount and price after discount with this online calculator.',
+      'Find discount amount, final sale price and optional sales tax in one step. Display shopping calculations in Indian rupees or another supported currency.',
   },
 
   'meta-tag-generator': {
@@ -431,7 +431,7 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
       description: seoDescription,
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Any',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      offers: { '@type': 'Offer', price: '0' },
     };
     let appSchema = document.getElementById('tool-app-jsonld');
     if (!appSchema) {
