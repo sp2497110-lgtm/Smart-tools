@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Copy, Check, Trash2, Download, AlertCircle, CheckCircle2, Code, ArrowRightLeft } from 'lucide-react';
 import { ToolDefinition } from '../../types';
 import { triggerDownload } from '../../utils/imageUtils';
@@ -18,6 +18,15 @@ export default function DevTools({ tool }: Props) {
 
   // Base64 & URL mode
   const [mode, setMode] = useState<'encode' | 'decode'>(tool.id.endsWith('decoder') ? 'decode' : 'encode');
+
+  useEffect(() => {
+    setInput('');
+    setOutput('');
+    setError(null);
+    setCopied(false);
+    setIndent(2);
+    setMode(tool.id.endsWith('decoder') ? 'decode' : 'encode');
+  }, [tool.id]);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
