@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getToolByPath } from './data/toolsData';
+import { getSeoLandingPageByPath } from './data/seoLandingPages';
 import { ToolCategory } from './types';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeView from './components/HomeView';
 import ToolView from './components/ToolView';
+import SeoLandingPage from './components/SeoLandingPage';
 import SearchModal from './components/SearchModal';
 import InfoModals, { InfoModalType } from './components/InfoModals';
 
@@ -23,7 +25,7 @@ export default function App() {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [infoModal, setInfoModal] = useState<InfoModalType>(null);
 
-  // Sync state with popstate (Back / Forward browser buttons)
+  useEffect(() => {\n    document.getElementById('seo-prerender')?.remove();\n  }, []);\n\n  // Sync state with popstate (Back / Forward browser buttons)
   useEffect(() => {
     const handlePopState = () => {
       const p = window.location.pathname;
