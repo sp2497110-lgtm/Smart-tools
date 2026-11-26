@@ -68,7 +68,7 @@ export const TOOLS: ToolDefinition[] = [
     metaDescription: 'Free online image compressor to reduce JPG, PNG, and WebP file size. Compress images online in your browser without uploading files to a server.',
     iconName: 'Minimize2',
     popular: true,
-    keywords: ['compress image', 'reduce image size', 'image optimizer', 'jpg compressor', 'png compressor', 'webp optimizer', 'target kb', compress image to exact size online, reduce photo file size without losing quality, compress JPG to KB for online form, compress PNG image for website],
+    keywords: ['compress image', 'reduce image size', 'image optimizer', 'jpg compressor', 'png compressor', 'webp optimizer', 'target kb', 'compress image to exact size online', 'reduce photo file size without losing quality', 'compress JPG to KB for online form', 'compress PNG image for website'],
     relatedToolIds: ['compress-image-to-50kb', 'compress-image-to-200kb', 'image-resizer', 'jpg-to-png', 'png-to-jpg'],
     seo: {
       h1: 'Free Online Image Compressor',
@@ -110,7 +110,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Strictly compress any image to under 20 KB for online government portals, exams, and profile photo uploads.',
     metaDescription: 'Compress image to 20 KB online for free. Reduce JPG and PNG photo size for forms, applications, exams, and uploads with private browser-based processing.',
     iconName: 'FileDown',
-    keywords: ['compress image to 20kb', '20kb photo converter', 'online photo under 20kb', 'reduce photo to 20kb', photo resize 20 KB for online form, signature image compress to 20 KB, passport photo under 20 KB online],
+    keywords: ['compress image to 20kb', '20kb photo converter', 'online photo under 20kb', 'reduce photo to 20kb', 'photo resize 20 KB for online form', 'signature image compress to 20 KB', 'passport photo under 20 KB online'],
     relatedToolIds: ['image-compressor', 'compress-image-to-50kb', 'compress-image-to-100kb', 'image-resizer'],
     seo: {
       h1: 'Compress Image to 20 KB Online',
@@ -149,7 +149,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress JPG and PNG images to under 50 KB with optimized clarity for web forms, passports, and IDs.',
     metaDescription: 'Compress image to 50 KB online for free. Reduce photo size for exam forms, applications, passports, and website uploads in your browser.',
     iconName: 'FileDown',
-    keywords: ['compress image to 50kb', 'photo 50kb online', 'reduce image size to 50 kb', '50kb image converter', photo compress 50 KB for government form, signature resize 50 KB online, JPG under 50 KB online],
+    keywords: ['compress image to 50kb', 'photo 50kb online', 'reduce image size to 50 kb', '50kb image converter', 'photo compress 50 KB for government form', 'signature resize 50 KB online', 'JPG under 50 KB online'],
     relatedToolIds: ['image-compressor', 'compress-image-to-20kb', 'compress-image-to-100kb', 'compress-image-to-200kb'],
     seo: {
       h1: 'Compress Image to 50 KB Online',
@@ -182,7 +182,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress image to 100 KB or less. Balanced file size reduction for fast web pages, emails, and forms.',
     metaDescription: 'Compress image to 100 KB online for free. Reduce JPG, PNG, and WebP photo size for forms, websites, email, and document uploads.',
     iconName: 'FileDown',
-    keywords: ['compress image to 100kb', '100 kb image compressor', 'reduce photo size to 100kb', photo compress 100 KB for application form, image resize under 100 KB online],
+    keywords: ['compress image to 100kb', '100 kb image compressor', 'reduce photo size to 100kb', 'photo compress 100 KB for application form', 'image resize under 100 KB online'],
     relatedToolIds: ['image-compressor', 'compress-image-to-50kb', 'compress-image-to-200kb', 'image-resizer'],
     seo: {
       h1: 'Compress Image to 100 KB Online',
@@ -216,7 +216,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress image to 200 KB online. Ideal for high-definition social media posts, portfolios, and eCommerce stores.',
     metaDescription: 'Compress image to 200 KB online for free. Reduce photo file size while keeping good image quality for websites, forms, and uploads.',
     iconName: 'FileDown',
-    keywords: ['compress image to 200kb', '200 kb compressor', 'reduce image under 200kb', 'photo compressor 200kb', photo compress 200 KB for upload, reduce JPG to 200 KB online],
+    keywords: ['compress image to 200kb', '200 kb compressor', 'reduce image under 200kb', 'photo compressor 200kb', 'photo compress 200 KB for upload', 'reduce JPG to 200 KB online'],
     relatedToolIds: ['image-compressor', 'compress-image-to-100kb', 'compress-image-to-500kb', 'image-resizer'],
     seo: {
       h1: 'Compress Image to 200 KB Online',
@@ -249,7 +249,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress high-resolution DSLR photos and scans to under 500 KB without noticeable degradation.',
     metaDescription: 'Compress image to 500 KB online for free. Reduce large photos and scans to under 500 KB with private browser-based compression.',
     iconName: 'FileDown',
-    keywords: ['compress image to 500kb', '500kb photo converter', 'reduce photo under 500kb', compress photo below 500 KB online, reduce large image to 500 KB],
+    keywords: ['compress image to 500kb', '500kb photo converter', 'reduce photo under 500kb', 'compress photo below 500 KB online', 'reduce large image to 500 KB'],
     relatedToolIds: ['image-compressor', 'compress-image-to-200kb', 'image-resizer', 'jpg-to-webp'],
     seo: {
       h1: 'Compress Image to 500 KB Online',
@@ -282,7 +282,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Resize images by width, height, percentage, or social media presets with aspect ratio lock.',
     metaDescription: 'Free online image resizer to change photo dimensions in pixels or percentage. Resize JPG, PNG, and WebP images while preserving aspect ratio.',
     iconName: 'Scaling',
-    keywords: ['image resizer', 'resize image online', 'change image dimensions', 'scale photo', 'aspect ratio resize', resize image to pixels online, passport photo size converter, photo resize for online application],
+    keywords: ['image resizer', 'resize image online', 'change image dimensions', 'scale photo', 'aspect ratio resize', 'resize image to pixels online', 'passport photo size converter', 'photo resize for online application'],
     relatedToolIds: ['image-compressor', 'image-cropper', 'image-rotator', 'jpg-to-png'],
     seo: {
       h1: 'Free Online Image Resizer',
@@ -317,7 +317,7 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'ArrowRightLeft',
     sourceFormat: 'jpg',
     targetFormat: 'png',
-    keywords: ['jpg to png', 'jpeg to png converter', 'convert photo to png', 'lossless png conversion', convert JPEG photo to PNG online, JPG image to transparent PNG alternative],
+    keywords: ['jpg to png', 'jpeg to png converter', 'convert photo to png', 'lossless png conversion', 'convert JPEG photo to PNG online', 'JPG image to transparent PNG alternative'],
     relatedToolIds: ['png-to-jpg', 'jpg-to-webp', 'image-compressor', 'image-resizer'],
     seo: {
       h1: 'Convert JPG to PNG Online',
@@ -351,7 +351,7 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'ArrowRightLeft',
     sourceFormat: 'png',
     targetFormat: 'jpg',
-    keywords: ['png to jpg', 'png to jpeg converter', 'convert png to jpg', 'transparent png to jpg background', convert PNG with white background to JPG, PNG image file size to JPG],
+    keywords: ['png to jpg', 'png to jpeg converter', 'convert png to jpg', 'transparent png to jpg background', 'convert PNG with white background to JPG', 'PNG image file size to JPG'],
     relatedToolIds: ['jpg-to-png', 'webp-to-jpg', 'image-compressor', 'image-resizer'],
     seo: {
       h1: 'Convert PNG to JPG Online',
@@ -385,7 +385,7 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'Zap',
     sourceFormat: 'jpg',
     targetFormat: 'webp',
-    keywords: ['jpg to webp', 'convert jpeg to webp', 'next gen image format', 'webp converter online', convert JPG photo to WebP online, WebP image converter for website],
+    keywords: ['jpg to webp', 'convert jpeg to webp', 'next gen image format', 'webp converter online', 'convert JPG photo to WebP online', 'WebP image converter for website'],
     relatedToolIds: ['webp-to-jpg', 'jpg-to-png', 'image-compressor'],
     seo: {
       h1: 'Convert JPG to WebP Online',
@@ -419,7 +419,7 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'ArrowRightLeft',
     sourceFormat: 'webp',
     targetFormat: 'jpg',
-    keywords: ['webp to jpg', 'convert webp to jpeg', 'webp file to jpg', 'make webp compatible', open WebP image as JPG, convert downloaded WebP to JPEG],
+    keywords: ['webp to jpg', 'convert webp to jpeg', 'webp file to jpg', 'make webp compatible', 'open WebP image as JPG', 'convert downloaded WebP to JPEG'],
     relatedToolIds: ['jpg-to-webp', 'png-to-jpg', 'image-compressor'],
     seo: {
       h1: 'Convert WebP to JPG Online',
@@ -451,7 +451,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Crop images with precision presets (1:1, 4:3, 16:9, free crop) and download in full resolution.',
     metaDescription: 'Free online image cropper. Crop photos to 1:1, 4:3, 16:9, or custom dimensions directly in your browser.',
     iconName: 'Crop',
-    keywords: ['crop image', 'image cropper online', 'crop photo 1:1', 'aspect ratio crop', 'photo trimmer', crop passport size photo online, crop image to exact pixels],
+    keywords: ['crop image', 'image cropper online', 'crop photo 1:1', 'aspect ratio crop', 'photo trimmer', 'crop passport size photo online', 'crop image to exact pixels'],
     relatedToolIds: ['image-resizer', 'image-rotator', 'image-compressor'],
     seo: {
       h1: 'Free Online Image Cropper',
@@ -483,7 +483,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Rotate images 90°, 180°, 270° or flip horizontally and vertically with instant preview.',
     metaDescription: 'Rotate or flip images online for free. Turn photos 90, 180, or 270 degrees and flip them horizontally or vertically.',
     iconName: 'RotateCw',
-    keywords: ['rotate image', 'image rotator', 'flip photo horizontal', 'flip photo vertical', 'fix upside down photo', rotate photo online without app, fix sideways image orientation],
+    keywords: ['rotate image', 'image rotator', 'flip photo horizontal', 'flip photo vertical', 'fix upside down photo', 'rotate photo online without app', 'fix sideways image orientation'],
     relatedToolIds: ['image-cropper', 'image-resizer', 'image-compressor'],
     seo: {
       h1: 'Rotate & Flip Images Online',
@@ -518,7 +518,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress PDF documents in your browser by compacting object streams and stripping redundant metadata.',
     metaDescription: 'Compress PDF online for free. Reduce PDF file size directly in your browser without uploading your sensitive documents.',
     iconName: 'FileText',
-    keywords: ['pdf compressor', 'compress pdf online', 'reduce pdf size', 'shrink pdf', 'private pdf compressor', reduce PDF size for online application, compress PDF under 1 MB online, shrink PDF for email attachment],
+    keywords: ['pdf compressor', 'compress pdf online', 'reduce pdf size', 'shrink pdf', 'private pdf compressor', 'reduce PDF size for online application', 'compress PDF under 1 MB online', 'shrink PDF for email attachment'],
     relatedToolIds: ['pdf-merger', 'pdf-splitter', 'jpg-to-pdf', 'pdf-to-jpg'],
     seo: {
       h1: 'Free Online PDF Compressor',
@@ -555,7 +555,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Combine multiple PDF files into a single unified document with drag-and-drop reordering.',
     metaDescription: 'Merge PDF files online for free. Combine multiple PDFs into one document easily and securely in your browser.',
     iconName: 'Layers',
-    keywords: ['merge pdf', 'combine pdfs', 'pdf joiner online', 'merge documents into one pdf', combine PDF files into one online, join multiple PDF documents free],
+    keywords: ['merge pdf', 'combine pdfs', 'pdf joiner online', 'merge documents into one pdf', 'combine PDF files into one online', 'join multiple PDF documents free'],
     relatedToolIds: ['pdf-splitter', 'pdf-compressor', 'jpg-to-pdf'],
     seo: {
       h1: 'Merge PDF Files Online for Free',
@@ -587,7 +587,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Extract specific pages or page ranges from a PDF document or save all pages as individual PDFs in a ZIP.',
     metaDescription: 'Split PDF online for free. Extract pages or split PDF into individual files safely in your browser.',
     iconName: 'Scissors',
-    keywords: ['split pdf', 'extract pdf pages', 'separate pdf pages', 'cut pdf online', extract selected pages from PDF online, split PDF pages into separate files],
+    keywords: ['split pdf', 'extract pdf pages', 'separate pdf pages', 'cut pdf online', 'extract selected pages from PDF online', 'split PDF pages into separate files'],
     relatedToolIds: ['pdf-merger', 'pdf-compressor', 'pdf-to-jpg'],
     seo: {
       h1: 'Split PDF Documents Online',
@@ -620,7 +620,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Convert one or multiple JPG/PNG images into a clean, printable PDF document with custom page layouts.',
     metaDescription: 'Convert JPG to PDF online for free. Combine multiple images into a single printable PDF document.',
     iconName: 'FileImage',
-    keywords: ['jpg to pdf', 'images to pdf converter', 'convert photos to pdf', 'png to pdf document', convert multiple photos into one PDF, make PDF from JPG images online],
+    keywords: ['jpg to pdf', 'images to pdf converter', 'convert photos to pdf', 'png to pdf document', 'convert multiple photos into one PDF', 'make PDF from JPG images online'],
     relatedToolIds: ['pdf-to-jpg', 'pdf-merger', 'image-compressor'],
     seo: {
       h1: 'Convert JPG to PDF Online',
@@ -652,7 +652,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Render and extract all pages of a PDF document as high-resolution JPEG images.',
     metaDescription: 'Convert PDF to JPG online for free. Extract PDF pages as high-resolution images directly in your browser.',
     iconName: 'Images',
-    keywords: ['pdf to jpg', 'pdf to image converter', 'extract pages as jpg', 'convert pdf to jpeg', save PDF pages as JPG images, convert PDF page to image online],
+    keywords: ['pdf to jpg', 'pdf to image converter', 'extract pages as jpg', 'convert pdf to jpeg', 'save PDF pages as JPG images', 'convert PDF page to image online'],
     relatedToolIds: ['jpg-to-pdf', 'pdf-splitter', 'image-compressor'],
     seo: {
       h1: 'Convert PDF to JPG Online',
@@ -687,7 +687,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Real-time word, character, sentence, paragraph, and reading time counter for writers and students.',
     metaDescription: 'Free online word counter. Count words, characters, sentences, paragraphs, and estimated reading time in real-time.',
     iconName: 'FileText',
-    keywords: ['word counter', 'character counter', 'count words online', 'reading time calculator', 'sentence counter', word count checker for essay, count words and characters in paragraph],
+    keywords: ['word counter', 'character counter', 'count words online', 'reading time calculator', 'sentence counter', 'word count checker for essay', 'count words and characters in paragraph'],
     relatedToolIds: ['character-counter', 'case-converter', 'remove-duplicate-lines'],
     seo: {
       h1: 'Online Word & Character Counter',
@@ -719,7 +719,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Track character limits for social media, SEO meta descriptions, and SMS messages.',
     metaDescription: 'Free character counter with limits for Twitter/X (280 chars), SMS (160 chars), and SEO meta descriptions (160 chars).',
     iconName: 'Hash',
-    keywords: ['character counter', 'letter counter', 'twitter character count', 'sms limit counter', 'seo meta length', character count with spaces online, count letters for social media bio],
+    keywords: ['character counter', 'letter counter', 'twitter character count', 'sms limit counter', 'seo meta length', 'character count with spaces online', 'count letters for social media bio'],
     relatedToolIds: ['word-counter', 'case-converter', 'meta-tag-generator'],
     seo: {
       h1: 'Online Character Counter',
@@ -751,7 +751,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Convert text between UPPERCASE, lowercase, Title Case, Sentence case, Capitalized, camelCase, and snake_case.',
     metaDescription: 'Free online case converter. Switch text between UPPERCASE, lowercase, Title Case, sentence case, camelCase, and snake_case.',
     iconName: 'Type',
-    keywords: ['case converter', 'uppercase to lowercase', 'title case converter', 'sentence case', 'camelcase converter', change lowercase to uppercase online, convert text to title case],
+    keywords: ['case converter', 'uppercase to lowercase', 'title case converter', 'sentence case', 'camelcase converter', 'change lowercase to uppercase online', 'convert text to title case'],
     relatedToolIds: ['word-counter', 'remove-duplicate-lines', 'json-formatter'],
     seo: {
       h1: 'Online Text Case Converter',
@@ -782,7 +782,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Clean lists by removing duplicate lines while preserving original ordering and trimming whitespace.',
     metaDescription: 'Remove duplicate lines online for free. Deduplicate text lists, preserve original order, and trim whitespace easily.',
     iconName: 'Filter',
-    keywords: ['remove duplicate lines', 'deduplicate list', 'delete duplicate text', 'clean list online', 'unique lines', remove repeated names from list, online duplicate text line remover],
+    keywords: ['remove duplicate lines', 'deduplicate list', 'delete duplicate text', 'clean list online', 'unique lines', 'remove repeated names from list', 'online duplicate text line remover'],
     relatedToolIds: ['word-counter', 'case-converter', 'json-formatter'],
     seo: {
       h1: 'Remove Duplicate Lines from Text',
@@ -817,7 +817,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Format, beautify, and validate JSON code with custom indentation (2 spaces, 4 spaces, tabs).',
     metaDescription: 'Free online JSON formatter and beautifier. Indent and format raw JSON with custom spacing and syntax error detection.',
     iconName: 'Braces',
-    keywords: ['json formatter', 'beautify json', 'format json online', 'json indent', 'pretty print json', format JSON with indentation online, JSON pretty print and syntax check],
+    keywords: ['json formatter', 'beautify json', 'format json online', 'json indent', 'pretty print json', 'format JSON with indentation online', 'JSON pretty print and syntax check'],
     relatedToolIds: ['json-validator', 'json-minifier', 'base64-encoder', 'url-encoder'],
     seo: {
       h1: 'Online JSON Formatter & Beautifier',
@@ -849,7 +849,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Validate JSON syntax and identify exact line and column errors in malformed data.',
     metaDescription: 'Validate JSON syntax online. Get clear error messages with exact line and character positions for invalid JSON.',
     iconName: 'CheckCircle2',
-    keywords: ['json validator', 'validate json online', 'json lint', 'check json syntax', 'find json errors', check JSON syntax error online, validate JSON file format],
+    keywords: ['json validator', 'validate json online', 'json lint', 'check json syntax', 'find json errors', 'check JSON syntax error online', 'validate JSON file format'],
     relatedToolIds: ['json-formatter', 'json-minifier', 'base64-encoder'],
     seo: {
       h1: 'Online JSON Validator',
@@ -880,7 +880,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress and minify JSON by stripping whitespace and indentation to reduce payload transfer sizes.',
     metaDescription: 'Minify JSON online for free. Remove unnecessary whitespace, tabs, and newlines to shrink JSON payload size.',
     iconName: 'Minimize',
-    keywords: ['json minifier', 'compress json', 'minify json online', 'shrink json payload', 'json compact', minify JSON string online, remove whitespace from JSON data],
+    keywords: ['json minifier', 'compress json', 'minify json online', 'shrink json payload', 'json compact', 'minify JSON string online', 'remove whitespace from JSON data'],
     relatedToolIds: ['json-formatter', 'json-validator', 'base64-encoder'],
     seo: {
       h1: 'Online JSON Minifier',
@@ -913,7 +913,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Encode UTF-8 text or binary files into Base64 format for safe data transmission.',
     metaDescription: 'Free online Base64 encoder. Convert text and files to standard Base64 encoding with UTF-8 support in your browser.',
     iconName: 'Binary',
-    keywords: ['base64 encoder', 'encode base64 online', 'text to base64', 'file to base64', 'base64 converter', encode text to Base64 UTF 8, Base64 encode string online],
+    keywords: ['base64 encoder', 'encode base64 online', 'text to base64', 'file to base64', 'base64 converter', 'encode text to Base64 UTF 8', 'Base64 encode string online'],
     relatedToolIds: ['base64-decoder', 'url-encoder', 'json-formatter'],
     seo: {
       h1: 'Online Base64 Encoder',
@@ -944,7 +944,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Decode Base64 encoded strings back into readable text or preview embedded Base64 images.',
     metaDescription: 'Free online Base64 decoder. Convert Base64 strings back to UTF-8 plain text or preview encoded images directly in your browser.',
     iconName: 'Binary',
-    keywords: ['base64 decoder', 'decode base64 online', 'base64 to text', 'base64 to image preview', 'base64 convert', decode Base64 to readable text, Base64 to plain text converter],
+    keywords: ['base64 decoder', 'decode base64 online', 'base64 to text', 'base64 to image preview', 'base64 convert', 'decode Base64 to readable text', 'Base64 to plain text converter'],
     relatedToolIds: ['base64-encoder', 'url-decoder', 'json-validator'],
     seo: {
       h1: 'Online Base64 Decoder',
@@ -976,7 +976,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Encode query parameters and URLs into percent-encoded format for safe web transmission.',
     metaDescription: 'Free online URL encoder. Convert special characters and query strings into safe percent-encoded URLs.',
     iconName: 'Link',
-    keywords: ['url encoder', 'encode url online', 'percent encoding', 'url parameter encoder', 'encodeuricomponent', encode URL query parameters online, percent encode URL string],
+    keywords: ['url encoder', 'encode url online', 'percent encoding', 'url parameter encoder', 'encodeuricomponent', 'encode URL query parameters online', 'percent encode URL string'],
     relatedToolIds: ['url-decoder', 'base64-encoder', 'json-formatter'],
     seo: {
       h1: 'Online URL Encoder',
@@ -1007,7 +1007,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Decode percent-encoded URL strings back into human-readable text and query parameters.',
     metaDescription: 'Free online URL decoder. Convert percent-encoded URLs (%20, %26, etc.) back into readable text.',
     iconName: 'Link2',
-    keywords: ['url decoder', 'decode url online', 'percent decode', 'decodeuricomponent', 'url string converter', decode percent encoded URL online, URL decode query string],
+    keywords: ['url decoder', 'decode url online', 'percent decode', 'decodeuricomponent', 'url string converter', 'decode percent encoded URL online', 'URL decode query string'],
     relatedToolIds: ['url-encoder', 'base64-decoder', 'json-formatter'],
     seo: {
       h1: 'Online URL Decoder',
@@ -1041,7 +1041,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Generate high-resolution QR codes for websites, Wi-Fi networks, WhatsApp, phone numbers, and vCards.',
     metaDescription: 'Free online QR code generator. Create custom QR codes for URLs, WiFi, WhatsApp, email, and text with instant PNG download.',
     iconName: 'QrCode',
-    keywords: ['qr code generator', 'create qr code online', 'wifi qr code', 'whatsapp qr code', 'free qr code maker', create QR code for website link, WiFi QR code generator free, WhatsApp QR code maker],
+    keywords: ['qr code generator', 'create qr code online', 'wifi qr code', 'whatsapp qr code', 'free qr code maker', 'create QR code for website link', 'WiFi QR code generator free', 'WhatsApp QR code maker'],
     relatedToolIds: ['color-picker', 'url-encoder', 'image-compressor'],
     seo: {
       h1: 'Free Online QR Code Generator',
@@ -1081,7 +1081,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate what is X% of Y, X is what % of Y, and percentage increase or decrease with step-by-step math.',
     metaDescription: 'Free online percentage calculator. Calculate percentages, percentage change, and fractions with formulas and explanations.',
     iconName: 'Percent',
-    keywords: ['percentage calculator', 'calculate percentage', 'percent increase calculator', 'percent decrease', 'what percent of', what is percentage of a number calculator, percentage increase decrease calculator online],
+    keywords: ['percentage calculator', 'calculate percentage', 'percent increase calculator', 'percent decrease', 'what percent of', 'what is percentage of a number calculator', 'percentage increase decrease calculator online'],
     relatedToolIds: ['discount-calculator', 'gst-calculator', 'simple-interest-calculator'],
     seo: {
       h1: 'Online Percentage Calculator',
@@ -1116,7 +1116,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate your exact age in years, months, and days, plus total days lived and countdown to next birthday.',
     metaDescription: 'Free online age calculator. Calculate exact age in years, months, days, hours, and minutes with next birthday countdown.',
     iconName: 'Calendar',
-    keywords: ['age calculator', 'calculate age online', 'exact age in days', 'how old am i', 'birthday countdown', calculate age from date of birth online, age in years months and days calculator],
+    keywords: ['age calculator', 'calculate age online', 'exact age in days', 'how old am i', 'birthday countdown', 'calculate age from date of birth online', 'age in years months and days calculator'],
     relatedToolIds: ['timestamp-converter', 'percentage-calculator', 'bmi-calculator'],
     seo: {
       h1: 'Online Age Calculator',
@@ -1151,7 +1151,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate Body Mass Index (BMI) using Metric (kg/cm) or Imperial (lbs/ft-in) units with WHO weight categories.',
     metaDescription: 'Free online BMI calculator. Check your Body Mass Index in Metric and Imperial units with official WHO health category classifications.',
     iconName: 'Activity',
-    keywords: ['bmi calculator', 'body mass index', 'healthy weight calculator', 'calculate bmi metric imperial', 'who bmi chart', BMI calculator metric and imperial, body mass index calculator kg cm],
+    keywords: ['bmi calculator', 'body mass index', 'healthy weight calculator', 'calculate bmi metric imperial', 'who bmi chart', 'BMI calculator metric and imperial', 'body mass index calculator kg cm'],
     relatedToolIds: ['age-calculator', 'percentage-calculator', 'discount-calculator'],
     seo: {
       h1: 'Online BMI Calculator',
@@ -1190,7 +1190,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate Equated Monthly Installments (EMI) for home loans, car loans, or personal loans with interest breakdowns.',
     metaDescription: 'Free online EMI calculator. Calculate monthly loan payments, total interest payable, and total amount for home, car, and personal loans.',
     iconName: 'CreditCard',
-    keywords: ['emi calculator', 'loan emi calculator', 'home loan emi', 'car loan payment', 'calculate monthly emi', home loan EMI calculator India, personal loan monthly EMI calculator, car loan EMI calculator with interest, loan EMI calculator in rupees],
+    keywords: ['emi calculator', 'loan emi calculator', 'home loan emi', 'car loan payment', 'calculate monthly emi', 'home loan EMI calculator India', 'personal loan monthly EMI calculator', 'car loan EMI calculator with interest', 'loan EMI calculator in rupees'],
     relatedToolIds: ['sip-calculator', 'simple-interest-calculator', 'compound-interest-calculator', 'percentage-calculator'],
     seo: {
       h1: 'Online EMI Calculator',
@@ -1226,7 +1226,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate future returns on Systematic Investment Plans (SIP) in mutual funds with wealth growth estimates.',
     metaDescription: 'Free online SIP calculator. Calculate expected returns on mutual fund monthly investments with compound growth projections.',
     iconName: 'TrendingUp',
-    keywords: ['sip calculator', 'systematic investment plan', 'mutual fund returns', 'sip return calculator', 'investment calculator', SIP return calculator India monthly investment, mutual fund SIP calculator with step up, monthly SIP maturity calculator rupees],
+    keywords: ['sip calculator', 'systematic investment plan', 'mutual fund returns', 'sip return calculator', 'investment calculator', 'SIP return calculator India monthly investment', 'mutual fund SIP calculator with step up', 'monthly SIP maturity calculator rupees'],
     relatedToolIds: ['emi-calculator', 'compound-interest-calculator', 'simple-interest-calculator'],
     seo: {
       h1: 'Online SIP Calculator',
@@ -1261,7 +1261,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate Goods and Services Tax (GST) easily: Add GST to net amount or remove GST from gross amount.',
     metaDescription: 'Free online GST calculator. Calculate GST amount, CGST/SGST split, add GST, or reverse calculate net price excluding GST.',
     iconName: 'Receipt',
-    keywords: ['gst calculator', 'calculate gst', 'add gst', 'remove gst', 'reverse gst calculator', 'tax calculator', GST calculator India 5 12 18 28 percent, add GST and remove GST calculator India, CGST SGST split calculator],
+    keywords: ['gst calculator', 'calculate gst', 'add gst', 'remove gst', 'reverse gst calculator', 'tax calculator', 'GST calculator India 5 12 18 28 percent', 'add GST and remove GST calculator India', 'CGST SGST split calculator'],
     relatedToolIds: ['percentage-calculator', 'discount-calculator', 'simple-interest-calculator'],
     seo: {
       h1: 'Online GST Calculator',
@@ -1296,7 +1296,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate Simple Interest (SI) and total maturity amount with the classic SI = (P × R × T) / 100 formula.',
     metaDescription: 'Free online simple interest calculator. Calculate SI, total amount, and interest earned over years or months with step-by-step math.',
     iconName: 'DollarSign',
-    keywords: ['simple interest calculator', 'calculate simple interest', 'si formula', 'principal rate time calculator', simple interest calculator in rupees, calculate interest on principal rate and time],
+    keywords: ['simple interest calculator', 'calculate simple interest', 'si formula', 'principal rate time calculator', 'simple interest calculator in rupees', 'calculate interest on principal rate and time'],
     relatedToolIds: ['compound-interest-calculator', 'emi-calculator', 'percentage-calculator'],
     seo: {
       h1: 'Online Simple Interest Calculator',
@@ -1332,7 +1332,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate compound interest with flexible compounding intervals: annually, semi-annually, quarterly, monthly, daily.',
     metaDescription: 'Free online compound interest calculator. Calculate future investment value with annual, monthly, quarterly compounding frequencies.',
     iconName: 'PieChart',
-    keywords: ['compound interest calculator', 'calculate compound interest', 'compound growth', 'interest compounding monthly quarterly', compound interest calculator monthly compounding, compound interest calculator in rupees, investment growth calculator],
+    keywords: ['compound interest calculator', 'calculate compound interest', 'compound growth', 'interest compounding monthly quarterly', 'compound interest calculator monthly compounding', 'compound interest calculator in rupees', 'investment growth calculator'],
     relatedToolIds: ['simple-interest-calculator', 'sip-calculator', 'emi-calculator'],
     seo: {
       h1: 'Online Compound Interest Calculator',
@@ -1368,7 +1368,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Calculate final sale prices, money saved, and additional tax or coupon savings during shopping sales.',
     metaDescription: 'Free online discount calculator. Calculate sale prices, savings amount, and percentage discounts quickly in your browser.',
     iconName: 'Tag',
-    keywords: ['discount calculator', 'sale price calculator', 'calculate discount', 'shopping discount', 'percentage off', sale price after discount calculator, discount percentage and savings calculator],
+    keywords: ['discount calculator', 'sale price calculator', 'calculate discount', 'shopping discount', 'percentage off', 'sale price after discount calculator', 'discount percentage and savings calculator'],
     relatedToolIds: ['percentage-calculator', 'gst-calculator'],
     seo: {
       h1: 'Online Discount Calculator',
@@ -1406,7 +1406,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Generate production-ready HTML meta tags, Open Graph (Facebook/LinkedIn) and Twitter Cards with live search preview.',
     metaDescription: 'Free online meta tag generator. Create perfect HTML title, description, Open Graph, and Twitter Card tags for SEO.',
     iconName: 'Globe',
-    keywords: ['meta tag generator', 'seo meta tags', 'open graph generator', 'twitter card generator', 'html meta generator', SEO title and meta description generator, Open Graph meta tag HTML generator],
+    keywords: ['meta tag generator', 'seo meta tags', 'open graph generator', 'twitter card generator', 'html meta generator', 'SEO title and meta description generator', 'Open Graph meta tag HTML generator'],
     relatedToolIds: ['robots-txt-generator', 'sitemap-generator', 'character-counter'],
     seo: {
       h1: 'Online Meta Tag Generator',
@@ -1438,7 +1438,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Create customized robots.txt files with crawl directives for Googlebot, Bingbot, and AI scrapers.',
     metaDescription: 'Free online robots.txt generator. Create search engine crawl directives, disallow rules, and sitemap references easily.',
     iconName: 'Bot',
-    keywords: ['robots.txt generator', 'create robots.txt', 'robots txt creator', 'crawler directives', 'disallow bot', robots txt file generator for website, Googlebot robots txt rules generator],
+    keywords: ['robots.txt generator', 'create robots.txt', 'robots txt creator', 'crawler directives', 'disallow bot', 'robots txt file generator for website', 'Googlebot robots txt rules generator'],
     relatedToolIds: ['sitemap-generator', 'meta-tag-generator'],
     seo: {
       h1: 'Online Robots.txt Generator',
@@ -1470,7 +1470,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Generate standard XML sitemaps adhering to sitemaps.org schema with priority and change frequencies.',
     metaDescription: 'Free online XML sitemap generator. Create valid sitemap.xml files with changefreq and priority for search engines.',
     iconName: 'Network',
-    keywords: ['xml sitemap generator', 'sitemap generator online', 'create sitemap xml', 'google sitemap creator', XML sitemap generator for Google Search Console, create sitemap xml for website],
+    keywords: ['xml sitemap generator', 'sitemap generator online', 'create sitemap xml', 'google sitemap creator', 'XML sitemap generator for Google Search Console', 'create sitemap xml for website'],
     relatedToolIds: ['robots-txt-generator', 'meta-tag-generator'],
     seo: {
       h1: 'Online XML Sitemap Generator',
@@ -1505,7 +1505,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Interactive color picker with HEX, RGB, HSL, and HSV conversion, contrast checker, and palette generator.',
     metaDescription: 'Free online color picker. Convert between HEX, RGB, and HSL formats with WCAG contrast ratio analysis and color harmonies.',
     iconName: 'Palette',
-    keywords: ['color picker', 'hex to rgb', 'rgb to hex converter', 'color converter online', 'hsl picker', 'contrast checker', HEX color picker and RGB converter, pick color from HEX RGB HSL],
+    keywords: ['color picker', 'hex to rgb', 'rgb to hex converter', 'color converter online', 'hsl picker', 'contrast checker', 'HEX color picker and RGB converter', 'pick color from HEX RGB HSL'],
     relatedToolIds: ['qr-code-generator', 'uuid-generator'],
     seo: {
       h1: 'Online Color Picker & Converter',
@@ -1538,7 +1538,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Generate cryptographically secure random UUID v4 identifiers in bulk with uppercase and hyphen options.',
     metaDescription: 'Free online UUID v4 generator. Generate cryptographically secure random UUIDs and GUIDs individually or in bulk.',
     iconName: 'Fingerprint',
-    keywords: ['uuid generator', 'guid generator', 'random uuid v4', 'bulk uuid generator', 'generate unique id', UUID v4 generator online bulk, random GUID generator free],
+    keywords: ['uuid generator', 'guid generator', 'random uuid v4', 'bulk uuid generator', 'generate unique id', 'UUID v4 generator online bulk', 'random GUID generator free'],
     relatedToolIds: ['timestamp-converter', 'base64-encoder', 'color-picker'],
     seo: {
       h1: 'Online UUID v4 Generator',
@@ -1571,7 +1571,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Convert Unix timestamps (seconds & milliseconds) to human-readable dates in local time and UTC, or vice versa.',
     metaDescription: 'Free online Unix timestamp converter. Convert epoch seconds and milliseconds to human dates and vice versa in local and UTC time.',
     iconName: 'Clock',
-    keywords: ['timestamp converter', 'unix timestamp to date', 'epoch converter', 'date to timestamp', 'epoch time online', Unix epoch timestamp to date converter, convert milliseconds timestamp online],
+    keywords: ['timestamp converter', 'unix timestamp to date', 'epoch converter', 'date to timestamp', 'epoch time online', 'Unix epoch timestamp to date converter', 'convert milliseconds timestamp online'],
     relatedToolIds: ['age-calculator', 'uuid-generator'],
     seo: {
       h1: 'Online Unix Timestamp Converter',
