@@ -476,7 +476,7 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
       case 'compress-image-to-100kb':
       case 'compress-image-to-200kb':
       case 'compress-image-to-500kb':
-        return <ImageCompressorTool tool={tool} />;
+        return <ImageCompressorTool key={tool.id} tool={tool} />;
 
       case 'image-resizer':
         return <ImageResizerTool />;
@@ -518,14 +518,14 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
       case 'character-counter':
       case 'case-converter':
       case 'remove-duplicate-lines':
-        return <TextTools tool={tool} />;
+        return <TextTools key={tool.id} tool={tool} />;
 
       case 'json-formatter':
       case 'json-validator':
       case 'json-minifier':
       case 'base64-encoder-decoder':
       case 'url-encoder-decoder':
-        return <DevTools tool={tool} />;
+        return <DevTools key={tool.id} tool={tool} />;
 
       case 'qr-code-generator':
         return <QrCodeTool />;
@@ -539,17 +539,17 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
       case 'simple-interest-calculator':
       case 'compound-interest-calculator':
       case 'discount-calculator':
-        return <CalculatorTools tool={tool} />;
+        return <CalculatorTools key={tool.id} tool={tool} />;
 
       case 'meta-tag-generator':
       case 'robots-txt-generator':
       case 'sitemap-generator':
-        return <SeoTools tool={tool} />;
+        return <SeoTools key={tool.id} tool={tool} />;
 
       case 'color-picker':
       case 'uuid-generator':
       case 'timestamp-converter':
-        return <UtilityTools tool={tool} />;
+        return <UtilityTools key={tool.id} tool={tool} />;
 
       default:
         return <ImageCompressorTool tool={tool} />;
