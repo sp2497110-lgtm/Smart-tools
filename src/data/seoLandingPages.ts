@@ -107,8 +107,10 @@ const buildPagesForTool = (tool: ToolDefinition): SeoLandingPage[] => {
 
 export const SEO_LANDING_PAGES: SeoLandingPage[] = tools.flatMap(buildPagesForTool);
 
-export const getSeoLandingPageByPath = (pathname: string): SeoLandingPage | undefined =>
-  SEO_LANDING_PAGES.find((page) => page.path === pathname.replace(/\/+$/, '') + (pathname.endsWith('/') ? '' : '/'));
+export const getSeoLandingPageByPath = (pathname: string): SeoLandingPage | undefined => {
+  const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  return SEO_LANDING_PAGES.find((page) => page.path === normalizedPath);
+};
 
 export const getSeoLandingPagesForTool = (toolId: string): SeoLandingPage[] =>
   SEO_LANDING_PAGES.filter((page) => page.toolId === toolId);
