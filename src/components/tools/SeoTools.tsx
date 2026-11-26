@@ -11,23 +11,23 @@ export default function SeoTools({ tool }: Props) {
   const [copied, setCopied] = useState(false);
 
   // META TAG GENERATOR STATE
-  const [metaTitle, setMetaTitle] = useState('Smart Tools - Fast, Free & Private Online Tools');
+  const [metaTitle, setMetaTitle] = useState('Toolzy - Free Online Image, PDF, SEO & Calculator Tools');
   const [metaDesc, setMetaDesc] = useState(
     'Compress images, merge PDFs, format JSON, count words, and calculate EMI completely in your web browser.'
   );
-  const [metaUrl, setMetaUrl] = useState('https://smarttools.app');
-  const [metaImage, setMetaImage] = useState('https://smarttools.app/og-cover.png');
+  const [metaUrl, setMetaUrl] = useState('https://toolzy.online');
+  const [metaImage, setMetaImage] = useState('');
   const [metaRobots, setMetaRobots] = useState('index, follow');
 
   // ROBOTS.TXT STATE
   const [robotsAgent, setRobotsAgent] = useState('*');
   const [robotsDisallows, setRobotsDisallows] = useState('/admin/\n/api/\n/tmp/');
   const [robotsAllows, setRobotsAllows] = useState('/');
-  const [robotsSitemap, setRobotsSitemap] = useState('https://smarttools.app/sitemap.xml');
+  const [robotsSitemap, setRobotsSitemap] = useState('https://toolzy.online/sitemap.xml');
   const [robotsDelay, setRobotsDelay] = useState('');
 
   // SITEMAP GENERATOR STATE
-  const [sitemapDomain, setSitemapDomain] = useState('https://smarttools.app');
+  const [sitemapDomain, setSitemapDomain] = useState('https://toolzy.online');
   const [sitemapPaths, setSitemapPaths] = useState('/\n/tools/image-compressor.html\n/tools/pdf-merger.html\n/tools/emi-calculator.html\n/tools/qr-code-generator.html');
   const [sitemapFreq, setSitemapFreq] = useState('weekly');
   const [sitemapPriority, setSitemapPriority] = useState('0.8');
