@@ -53,7 +53,7 @@ for (const page of SEO_LANDING_PAGES) {
     .replace(/<meta\s+property="og:description"[^>]*>/i, `<meta property="og:description" content="${escapeHtml(page.description)}" />`)
     .replace(/<meta\s+property="og:url"[^>]*>/i, `<meta property="og:url" content="${canonical}" />`)
     .replace('<div id="root"></div>', `${staticMarkup(page)}\n    <div id="root"></div>`);
-  html = html.replace('</head>', `<meta name="robots" content="index,follow,max-image-preview:large" />\n  </head>`);
+  html = html.replace(/<meta\\s+name="robots"[^>]*>/i, `<meta name="robots" content="index,follow,max-image-preview:large" />`);
   await writeFile(path.join(normalizedDir, 'index.html'), html, 'utf8');
   urls.push(canonical);
 }
