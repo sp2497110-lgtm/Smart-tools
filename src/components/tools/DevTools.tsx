@@ -17,7 +17,7 @@ export default function DevTools({ tool }: Props) {
   const [indent, setIndent] = useState<number | string>(2);
 
   // Base64 & URL mode
-  const [mode, setMode] = useState<'encode' | 'decode'>('encode');
+  const [mode, setMode] = useState<'encode' | 'decode'>(tool.id.endsWith('decoder') ? 'decode' : 'encode');
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -326,7 +326,7 @@ export default function DevTools({ tool }: Props) {
       )}
 
       {/* BASE64 ENCODER / DECODER */}
-      {tool.id === 'base64-encoder-decoder' && (
+      {['base64-encoder-decoder', 'base64-encoder', 'base64-decoder'].includes(tool.id) && (
         <div className="space-y-4">
           <div className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-xl">
             <div className="flex bg-slate-200/80 p-0.5 rounded-lg text-xs font-semibold">
@@ -414,7 +414,7 @@ export default function DevTools({ tool }: Props) {
       )}
 
       {/* URL ENCODER / DECODER */}
-      {tool.id === 'url-encoder-decoder' && (
+      {['url-encoder-decoder', 'url-encoder', 'url-decoder'].includes(tool.id) && (
         <div className="space-y-4">
           <div className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-xl">
             <div className="flex bg-slate-200/80 p-0.5 rounded-lg text-xs font-semibold">
