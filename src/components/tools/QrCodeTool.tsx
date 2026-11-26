@@ -7,7 +7,7 @@ export default function QrCodeTool() {
   const [type, setType] = useState<'url' | 'text' | 'wifi' | 'email' | 'whatsapp'>('url');
 
   // Fields
-  const [url, setUrl] = useState('https://smarttools.app');
+  const [url, setUrl] = useState('https://toolzy.online');
   const [text, setText] = useState('');
   const [wifiSsid, setWifiSsid] = useState('');
   const [wifiPass, setWifiPass] = useState('');
