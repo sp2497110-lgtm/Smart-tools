@@ -25,7 +25,11 @@ export default function App() {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [infoModal, setInfoModal] = useState<InfoModalType>(null);
 
-  useEffect(() => {\n    document.getElementById('seo-prerender')?.remove();\n  }, []);\n\n  // Sync state with popstate (Back / Forward browser buttons)
+  useEffect(() => {
+    document.getElementById('seo-prerender')?.remove();
+  }, []);
+
+  // Sync state with popstate (Back / Forward browser buttons)
   useEffect(() => {
     const handlePopState = () => {
       const p = window.location.pathname;
@@ -67,9 +71,8 @@ export default function App() {
   };
 
   // Find matching tool based on current path
-  const activeTool = useMemo(() => {
-    return getToolByPath(currentPath);
-  }, [currentPath]);
+  const activeTool = useMemo(() => getToolByPath(currentPath), [currentPath]);
+  const activeLandingPage = useMemo(() => getSeoLandingPageByPath(currentPath), [currentPath]);
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
@@ -82,7 +85,9 @@ export default function App() {
 
       {/* Main Dynamic View Area */}
       <div className="flex-1">
-        {activeTool ? (
+        {activeLandingPage ? (
+          <SeoLandingPage page={activeLandingPage} onNavigate={handleNavigate} />
+        ) : activeTool ? (
           <ToolView tool={activeTool} onNavigate={handleNavigate} />
         ) : (
           <HomeView
