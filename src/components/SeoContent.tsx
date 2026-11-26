@@ -43,7 +43,9 @@ export default function SeoContent({ tool, onNavigate }: SeoContentProps) {
     };
   }, [tool, seo.faq]);
 
-  const searchGuides = getSeoLandingPagesForTool(tool.id);\n\n  const relatedTools = relatedToolIds
+  const searchGuides = getSeoLandingPagesForTool(tool.id);
+
+  const relatedTools = relatedToolIds
     .map((id) => getToolById(id))
     .filter((t): t is ToolDefinition => Boolean(t));
 
