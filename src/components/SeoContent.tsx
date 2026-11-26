@@ -3,6 +3,7 @@ import { ChevronDown, Sparkles, HelpCircle, ArrowRight, BookOpen, Layers } from 
 import { ToolDefinition } from '../types';
 import { getToolById } from '../data/toolsData';
 import ToolIcon from './ToolIcon';
+import { getSeoLandingPagesForTool } from '../data/seoLandingPages';
 
 interface SeoContentProps {
   tool: ToolDefinition;
@@ -42,7 +43,7 @@ export default function SeoContent({ tool, onNavigate }: SeoContentProps) {
     };
   }, [tool, seo.faq]);
 
-  const relatedTools = relatedToolIds
+  const searchGuides = getSeoLandingPagesForTool(tool.id);\n\n  const relatedTools = relatedToolIds
     .map((id) => getToolById(id))
     .filter((t): t is ToolDefinition => Boolean(t));
 
@@ -67,6 +68,23 @@ export default function SeoContent({ tool, onNavigate }: SeoContentProps) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {/* Ten focused, crawlable search guides for this tool */}
+      {searchGuides.length > 0 && (
+        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs sm:p-6">
+          <h2 className="text-lg font-extrabold text-slate-900">Explore {tool.name} guides</h2>
+          <p className="mt-1 text-sm text-slate-600">Practical guides for different tasks, devices and common questions.</p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {searchGuides.map((page) => (
+              <a key={page.id} href={page.path} onClick={(event) => { event.preventDefault(); onNavigate(page.path); }}
+                className="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 px-3 py-3 text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:bg-indigo-50/60 hover:text-indigo-700">
+                <span>{page.keyword}</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
+              </a>
+            ))}
+          </div>
         </section>
       )}
 
