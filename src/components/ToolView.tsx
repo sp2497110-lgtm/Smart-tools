@@ -524,7 +524,11 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
       case 'json-validator':
       case 'json-minifier':
       case 'base64-encoder-decoder':
+      case 'base64-encoder':
+      case 'base64-decoder':
       case 'url-encoder-decoder':
+      case 'url-encoder':
+      case 'url-decoder':
         return <DevTools key={tool.id} tool={tool} />;
 
       case 'qr-code-generator':
