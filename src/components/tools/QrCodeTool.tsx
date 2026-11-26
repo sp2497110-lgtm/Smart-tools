@@ -43,7 +43,7 @@ export default function QrCodeTool() {
       case 'whatsapp':
         return `https://wa.me/${waPhone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(waMessage)}`;
       default:
-        return 'https://smarttools.app';
+        return 'https://toolzy.online';
     }
   };
 
