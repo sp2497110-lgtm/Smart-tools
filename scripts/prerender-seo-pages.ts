@@ -41,7 +41,7 @@ const staticMarkup = (page: (typeof SEO_LANDING_PAGES)[number]) => `
 const baseHtml = await readFile(path.join(DIST, 'index.html'), 'utf8');
 const urls: string[] = [];
 for (const page of SEO_LANDING_PAGES) {
-  const outDir = path.join(DIST, page.path.replace(/^\//, ''), '..');
+  const outDir = path.join(DIST, page.path.replace(/^\//, ''));
   const normalizedDir = path.resolve(outDir);
   await mkdir(normalizedDir, { recursive: true });
   const canonical = `${BASE_URL}${page.path}`;
@@ -63,4 +63,6 @@ const existing = [...oldSitemap.matchAll(/<loc>(https:\/\/toolzy\.online[^<]+)<\
 const allUrls = [...new Set([...existing, ...urls])];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allUrls.map((url) => `  <url><loc>${url}</loc><changefreq>monthly</changefreq><priority>${url === BASE_URL + '/' ? '1.0' : '0.6'}</priority></url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(DIST, 'sitemap.xml'), sitemap, 'utf8');
+const robots = await readFile(path.join(ROOT, 'robots.txt'), 'utf8');
+await writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
 console.log(`Generated ${SEO_LANDING_PAGES.length} crawlable landing pages and ${allUrls.length} sitemap URLs.`);
