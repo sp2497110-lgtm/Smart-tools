@@ -75,8 +75,20 @@ const buildPagesForTool = (tool: ToolDefinition): SeoLandingPage[] => {
     const path = `/search/${tool.id}/${slug}/`;
     const title = `${keyword.replace(/^./, (char) => char.toUpperCase())} | Toolzy`;
     const description = `${keyword}: learn when to use ${tool.name.toLowerCase()}, follow practical steps, and open the free browser-based Toolzy tool.`.slice(0, 158);
+    const intentQuestions = [
+      { q: `What does ${tool.name.toLowerCase()} help me do?`, a: `${tool.description} Use the main tool link on this guide to try it with your own input.` },
+      { q: `Is ${tool.name.toLowerCase()} available online for free?`, a: `Toolzy provides a browser-based ${tool.name.toLowerCase()} workspace without requiring an account. Check the current tool page for any usage limitations.` },
+      { q: `Can I use ${tool.name.toLowerCase()} on my phone?`, a: 'Yes. Open the page in a modern mobile browser, use the main tool link, and review the output before saving it.' },
+      { q: `Do I need to install software for ${tool.name.toLowerCase()}?`, a: 'No separate desktop installation is required for the browser workflow. A modern browser and a supported input are recommended.' },
+      { q: `What is the correct order for using ${tool.name.toLowerCase()}?`, a: steps.slice(0, 3).join(' ') },
+      { q: `What should beginners check when using ${tool.name.toLowerCase()}?`, a: 'Start with a small sample, understand each setting, and compare the output with your original input before using it for an important task.' },
+      { q: `What are common uses of ${tool.name.toLowerCase()}?`, a: `${tool.description} Common workflows include preparing content, handling files, or checking information before sharing it.` },
+      { q: `Is it safe to enter private information into ${tool.name.toLowerCase()}?`, a: 'Do not enter passwords, payment details, or sensitive personal information unless genuinely required. Review the privacy information and keep sensitive data out of unnecessary fields.' },
+      { q: `What can I do if ${tool.name.toLowerCase()} does not work as expected?`, a: 'Check the input format, browser support, file size, and selected options. Try a small sample and keep an unchanged copy of the original.' },
+      { q: `How can I check the result from ${tool.name.toLowerCase()}?`, a: 'Review the complete output and compare it with the intended result. For important work, verify it independently before submitting or sharing.' },
+    ];
     const faq = [
-      { q: `How do I use ${tool.name.toLowerCase()}?`, a: steps.slice(0, 3).join(' ') },
+      intentQuestions[index],
       { q: 'Can I use this page on a mobile device?', a: 'Yes. Open the page in a modern mobile browser, use the main tool link, and review the output before saving it.' },
       { q: 'Is the result automatically guaranteed to be correct?', a: 'No automated tool can guarantee every result for every input. Check the output against your requirements and keep an original copy of important information.' },
     ];
