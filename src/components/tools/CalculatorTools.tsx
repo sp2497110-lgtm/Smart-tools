@@ -564,7 +564,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Loan Principal</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Loan Principal ({currency})</label>
               <input
                 type="number"
                 value={emiPrincipal}
@@ -632,7 +632,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Monthly Investment</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Monthly Investment ({currency})</label>
               <input
                 type="number"
                 value={sipMonthly}
@@ -785,7 +785,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Principal Amount (P)</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Principal Amount ({currency}) (P)</label>
               <input
                 type="number"
                 value={siP}
@@ -837,7 +837,7 @@ export default function CalculatorTools({ tool }: Props) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-5 bg-slate-50 border border-slate-200 rounded-xl">
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Principal (P)</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Principal ({currency}) (P)</label>
               <input
                 type="number"
                 value={ciP}
