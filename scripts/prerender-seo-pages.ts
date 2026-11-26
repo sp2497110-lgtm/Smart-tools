@@ -39,7 +39,7 @@ const staticMarkup = (page: (typeof SEO_LANDING_PAGES)[number]) => `
 </div>`;
 
 const baseHtml = await readFile(path.join(DIST, 'index.html'), 'utf8');
-const urls: string[] = [];
+const urls: string[] = [];\nif (SEO_LANDING_PAGES.length !== 450) throw new Error(`Expected 450 SEO landing pages, received ${SEO_LANDING_PAGES.length}`);\nconst uniquePaths = new Set(SEO_LANDING_PAGES.map((page) => page.path));\nif (uniquePaths.size !== SEO_LANDING_PAGES.length) throw new Error('Duplicate SEO landing page paths detected');
 for (const page of SEO_LANDING_PAGES) {
   const outDir = path.join(DIST, page.path.replace(/^\//, ''));
   const normalizedDir = path.resolve(outDir);
