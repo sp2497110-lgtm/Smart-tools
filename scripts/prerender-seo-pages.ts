@@ -63,7 +63,16 @@ for (const page of SEO_LANDING_PAGES) {
 
 const oldSitemap = await readFile(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const existing = [...oldSitemap.matchAll(/<loc>(https:\/\/toolzy\.online[^<]+)<\/loc>/g)].map((match) => match[1]);
-const allUrls = [...new Set([...existing, ...urls])];
+const guideIndexUrl = `${BASE_URL}/seo-pages.html`;
+const groupedPages = new Map<string, typeof SEO_LANDING_PAGES>();
+for (const page of SEO_LANDING_PAGES) {
+  const group = groupedPages.get(page.toolId) || [];
+  group.push(page);
+  groupedPages.set(page.toolId, group);
+}
+const guideIndex = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>All Toolzy Search Guides – 450 Helpful Pages</title><meta name="description" content="Browse Toolzy's 450 practical guides for image, PDF, text, developer, QR, calculator and SEO tools."><link rel="canonical" href="${guideIndexUrl}"><meta name="robots" content="index,follow"></head><body style="font-family:system-ui,sans-serif;max-width:1100px;margin:32px auto;padding:0 20px;color:#0f172a"><header style="padding:28px;border-radius:20px;background:#111827;color:white"><h1>Toolzy Search Guides</h1><p>Browse practical guides by tool. Every guide links to its interactive tool.</p></header>${[...groupedPages.entries()].map(([toolId, pages]) => `<section style="padding:22px 0;border-bottom:1px solid #e2e8f0"><h2>${escapeHtml(pages[0].toolName)}</h2><ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;padding-left:20px">${pages.map((page) => `<li><a href="${page.path}">${escapeHtml(page.keyword)}</a></li>`).join('')}</ul><p><a href="${pages[0].toolPath}">Open ${escapeHtml(pages[0].toolName)}</a></p></section>`).join('')}</body></html>`;
+await writeFile(path.join(DIST, 'seo-pages.html'), guideIndex, 'utf8');
+const allUrls = [...new Set([...existing, ...urls, guideIndexUrl])];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allUrls.map((url) => `  <url><loc>${url}</loc><changefreq>monthly</changefreq><priority>${url === BASE_URL + '/' ? '1.0' : '0.6'}</priority></url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(DIST, 'sitemap.xml'), sitemap, 'utf8');
 const robots = await readFile(path.join(ROOT, 'robots.txt'), 'utf8');
