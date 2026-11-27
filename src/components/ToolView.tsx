@@ -325,7 +325,7 @@ export default function ToolView({ tool, onNavigate }: ToolViewProps) {
   useEffect(() => {
     const seo = SEO_DATA[tool.id];
 
-    const seoTitle = seo?.title || `${tool.name} - Smart Tools`;
+    const seoTitle = seo?.title || `${tool.name} Online Free | Toolzy`;
     const seoDescription =
       seo?.description || tool.metaDescription || tool.description;
 
