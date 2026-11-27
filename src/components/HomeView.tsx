@@ -60,8 +60,8 @@ export default function HomeView({
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight sm:leading-none">
-          Free Online Tools for <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Images, PDFs &amp; More</span>
+          Compress Image to 50KB Online Free <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">JPG, PNG, PDF &amp; More</span>
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -372,7 +372,7 @@ export default function HomeView({
               Architected for Privacy &amp; Speed
             </span>
             <h2 className="text-2xl sm:text-3xl font-black mt-1">
-              Why Professionals Choose Smart Tools
+              Why Use These Free Online Tools
             </h2>
           </div>
 
