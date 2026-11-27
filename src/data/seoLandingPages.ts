@@ -38,25 +38,20 @@ const slugify = (value: string) =>
 
 const uniqueKeywords = (tool: ToolDefinition): string[] => {
   const source = (tool.keywords || []).map((item) => item.trim()).filter(Boolean);
+  const name = tool.name.toLowerCase();
   const candidates = [
-    ...source,
-    `${tool.name.toLowerCase()} online`,
-    `${tool.name.toLowerCase()} free online`,
-    `${tool.name.toLowerCase()} for mobile`,
-    `how to use ${tool.name.toLowerCase()}`,
-    `${tool.name.toLowerCase()} step by step`,
-    `${tool.name.toLowerCase()} for beginners`,
-    `${tool.name.toLowerCase()} examples`,
-    `${tool.name.toLowerCase()} without installing software`,
-    `${tool.name.toLowerCase()} privacy and security`,
-    `${tool.name.toLowerCase()} troubleshooting`,
+    ...source.slice(0, 6),
+    `how to use ${name} online free`,
+    `${name} on mobile`,
+    `${name} without installing software`,
+    `${name} step by step`,
   ];
   const result: string[] = [];
   for (const item of candidates) {
     if (!result.some((existing) => existing.toLowerCase() === item.toLowerCase())) result.push(item);
     if (result.length === 10) break;
   }
-  while (result.length < 10) result.push(`${tool.name.toLowerCase()} guide ${result.length + 1}`);
+  while (result.length < 10) result.push(`${name} guide ${result.length + 1}`);
   return result;
 };
 
