@@ -149,7 +149,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Compress JPG and PNG images to under 50 KB with optimized clarity for web forms, passports, and IDs.',
     metaDescription: 'Compress image to 50 KB online for free. Reduce photo size for exam forms, applications, passports, and website uploads in your browser.',
     iconName: 'FileDown',
-    keywords: ['compress image to 50kb', 'photo 50kb online', 'reduce image size to 50 kb', '50kb image converter', 'photo compress 50 KB for government form', 'signature resize 50 KB online', 'JPG under 50 KB online'],
+    keywords: ['compress image to 50kb', 'image compressor to 50kb', 'compress photo to 50kb online', 'reduce image size to 50kb', '50kb photo size reducer', 'JPG under 50KB online', 'PNG image compress to 50KB', 'signature image compress to 50KB', 'photo 50KB for online form', 'compress passport size photo to 50KB'],
     relatedToolIds: ['image-compressor', 'compress-image-to-20kb', 'compress-image-to-100kb', 'compress-image-to-200kb'],
     seo: {
       h1: 'Compress Image to 50 KB Online',
