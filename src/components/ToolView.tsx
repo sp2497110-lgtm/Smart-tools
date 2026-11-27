@@ -42,7 +42,7 @@ const SEO_DATA: Record<
   }
 > = {
   'image-compressor': {
-    title: 'Image Compressor Online Free - Compress JPG, PNG & WebP | Smart Tools',
+    title: 'Image Compressor Online – Compress JPG, PNG & WebP Free | Toolzy',
     description:
       'Compress JPG, PNG and WebP images online for free. Reduce image size quickly while maintaining good quality with this private browser-based image compressor.',
   },
@@ -54,7 +54,7 @@ const SEO_DATA: Record<
   },
 
   'compress-image-to-50kb': {
-    title: 'Compress Image to 50KB Online Free – JPG & PNG | Toolzy',
+    title: 'Compress Image to 50KB Online Free – JPG, JPEG & PNG | Toolzy',
     description:
       'Compress image to 50KB online free. Reduce JPG, JPEG and PNG photo size for online forms, exam applications, signatures and uploads with a private browser tool.',
   },
@@ -120,15 +120,15 @@ const SEO_DATA: Record<
   },
 
   'pdf-compressor': {
-    title: 'PDF Compressor Online Free - Reduce PDF File Size',
+    title: 'Compress PDF Online Free – Reduce PDF Size | Toolzy',
     description:
-      'Compress PDF files online for free and reduce PDF file size for sharing, uploading and storage. Use the browser-based PDF compressor from Smart Tools.',
+      'Compress PDF files online for free and reduce PDF file size for sharing, uploading and storage. Use the browser-based PDF compressor from Toolzy.',
   },
 
   'pdf-merger': {
-    title: 'Merge PDF Online Free - Combine Multiple PDF Files',
+    title: 'Merge PDF Files Online Free – Combine PDFs | Toolzy',
     description:
-      'Merge multiple PDF files into one document online for free. Combine PDF files quickly in your browser with the Smart Tools PDF merger.',
+      'Merge multiple PDF files into one document online for free. Combine PDF files quickly in your browser with the Toolzy PDF merger.',
   },
 
   'pdf-splitter': {
