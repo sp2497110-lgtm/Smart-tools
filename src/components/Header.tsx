@@ -41,11 +41,9 @@ export default function Header({ onNavigate, activePath = '/', onOpenSearch }: H
                 <Sparkles className="w-5 h-5 text-indigo-100" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight group-hover:text-indigo-600 transition-colors">
-                  Smart Tools
-                </span>
+                <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight group-hover:text-indigo-600 transition-colors">Compress Image 50KB</span>
                 <span className="text-[11px] font-medium text-slate-500 -mt-0.5 tracking-wide hidden sm:block">
-                  Fast, Free &amp; Private
+                  Free JPG &amp; PNG Compressor
                 </span>
               </div>
             </button>
