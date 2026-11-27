@@ -54,9 +54,9 @@ const SEO_DATA: Record<
   },
 
   'compress-image-to-50kb': {
-    title: 'Compress Image to 50KB Online Free | JPG & PNG',
+    title: 'Compress Image to 50KB Online Free – JPG & PNG | Toolzy',
     description:
-      'Compress images to 50KB online for free. Reduce JPG and PNG photo size quickly for forms, applications and websites using a private browser-based tool.',
+      'Compress image to 50KB online free. Reduce JPG, JPEG and PNG photo size for online forms, exam applications, signatures and uploads with a private browser tool.',
   },
 
   'compress-image-to-100kb': {
